@@ -1,0 +1,190 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "EventbridgeWithLambdaStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "EventbridgeWithLambdaStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "EventbridgeWithLambdaStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "EventbridgeWithLambdaStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ed283aafac193f3b5fa093f32b9233a0fff7f4d9b5417bf669448c0394004d00.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "EventbridgeWithLambdaStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "EventbridgeWithLambdaStack.assets"
+      ],
+      "metadata": {
+        "/EventbridgeWithLambdaStack/producerFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerFunctionServiceRole84932989"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/producerFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerFunctionServiceRoleDefaultPolicyFCC7F9D8"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/producerFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerFunctionBD6C37FD"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientAF8F0B5D"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientCloudWatchRole4CB3E3F0"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientAccount2E84123F"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientDeployment1D8245C0a0cc27f0c7f38bfa31b6e8f18da629eb"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientDeploymentStageprod0D866AF5"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientEndpoint840EFB1C"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Default/{proxy+}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientproxyF674AC0C"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Default/{proxy+}/ANY/ApiPermission.EventbridgeWithLambdaStacktestApiforClient489B039B.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientproxyANYApiPermissionEventbridgeWithLambdaStacktestApiforClient489B039BANYproxyD35226DA"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Default/{proxy+}/ANY/ApiPermission.Test.EventbridgeWithLambdaStacktestApiforClient489B039B.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientproxyANYApiPermissionTestEventbridgeWithLambdaStacktestApiforClient489B039BANYproxy1E59003A"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Default/{proxy+}/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientproxyANY17FB0F9C"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Default/ANY/ApiPermission.EventbridgeWithLambdaStacktestApiforClient489B039B.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientANYApiPermissionEventbridgeWithLambdaStacktestApiforClient489B039BANY3A85604B"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Default/ANY/ApiPermission.Test.EventbridgeWithLambdaStacktestApiforClient489B039B.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientANYApiPermissionTestEventbridgeWithLambdaStacktestApiforClient489B039BANYC1B8819E"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/testApiforClient/Default/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiforClientANYD8F72B4F"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/consumerFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "consumerFunctionServiceRoleFAB2A3FF"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/consumerFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "consumerFunctionF99F4064"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/RulesToMatch/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RulesToMatch72F5ACD4"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/RulesToMatch/AllowEventRuleEventbridgeWithLambdaStackconsumerFunction84443323": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RulesToMatchAllowEventRuleEventbridgeWithLambdaStackconsumerFunction844433232DFF063C"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/EventbridgeWithLambdaStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "EventbridgeWithLambdaStack"
+    }
+  }
+}
